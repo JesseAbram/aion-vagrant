@@ -9,4 +9,11 @@ wget https://github.com/aionnetwork/aion/releases/download/v0.3.1.q/aion-v0.3.1.
 
 tar xvjf aion-*.tar.bz2
 
+rm aion/config/config.xml
+cp /vagrant/config_jon.xml aion/config/config.xml
+
 nohup aion/aion.sh &
+
+
+# test it out
+# curl -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67}' 192.168.254.11:8545
